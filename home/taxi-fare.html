@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>{{ title }} | SuPerTaXi</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" media="screen and (max-width: 1160px)" href="phone.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+    <b><i><h1>SuPerTaXi</h1> </i></b>
+    <a href="#"><i><h4>Taxi servce in Ranchi</h4></a></i>
+    <div class="right-nav">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'taxifare' %}">Taxi Fare</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'services' %}">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'about' %}">About us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav> 
+  <div class="mp">
+    <div class="w3l_header_left"> 
+      <ul>
+      <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:info@example.com"><strong><i class="fa-solid fa-square-envelope"></i>  info@ranchitaxicab.com</strong></a></li>
+      <li><a href="tel:9876541243"><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span><strong><i class="fa-solid fa-phone"></i>  9876541243</strong></a></li>
+      </ul>
+    </div>
+    <div class="rightnav">
+      <div class="ls">
+      {% if 'uname' in request.session %}
+      <a href="{% url 'logout' %}" class="btn btn-danger">Log Out</a>
+      {% else %}
+      <a href="{% url 'login' %}"><button class="btn">Login</button></a>
+      <a href="{% url 'signin' %}"><button class="btn">Sign in</button></a>
+      {% endif %}</div>
+    </div>
+    <section class="thrd">
+      <div class="thrd">
+        <div class="col-lg-6">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col"> </th>
+                <th scope="col">Source </th>
+                <th scope="col">Destination</th>
+                <th scope="col">Fare Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in list %}
+                  
+              <tr>
+              <th scope="row">{{i.id}}</th>
+              <td>{{i.source}}</td>
+              <td>{{i.destination}}</td>
+              <td>Rs {{i.price}}</td>
+              <td>
+                {% if 'uname' in request.session %}
+                <a href="{% url 'bill' %}">
+                {% else %}
+                  <a href="{% url 'login' %}">
+                {% endif %}
+                <button id="click" >Book now</button>
+                </a>
+              </td>
+              </tr>
+              {% endfor %}
+          </tbody>
+          </table>
+        </div>
+        </form>
+        <div class="col-lg-6"><img src="{% static 'img/cab-delhi.jpg' %}" alt="img"></div>
+      </div>
+  </section>  
+
+    <section class="four">
+        <div class="container py-md-3">
+          <div class="heading text-center mx-auto">
+              <h2 class="head">Taxi Fare In Ranchi - Taxi Services from Ranchi Airport - Cab Booking</h2>
+              <hr class="section-heading-spacer">
+      <div class="clearfix"></div>
+              <h2 class="wrapper essays-heading pt-10 pb-10 text-left">
+                  Travel made Easy - Anywhere, Anytime with Taxi Services in  Ranchi
+              </h2>
+              <div class="wrapper essays-content "><p>In a developing country like India, where each new day people buy their own vehicle there is a large chunk of our population still relying on public transport and taxi services. These days, taxi services also known as cab have become a popular and convenient mean of transport. The effortless services offered by taxi companies have made travelling fast, easy, and comfortable. Plus, cab booking is so hassle-free. One can easily hire a wide variety of cars through taxi services in <area> Ranchi, as they provide a range of cabs on hire such as non-Ac, Ac, mini cabs, SUVs, vans, Sedan, etc., to choose from. Let us understand the various services offered, working, and other features of taxi services in  Ranchi.</p>
+      <p><b>Types of Taxi Services</b></p>
+      <p>In  Ranchi taxi services are categorized as follows:</p>
+      <p><b>Working of Taxi Services</b></p>
+      <p>Gone are the days when you stood at the taxi stand waiting for a taxi to come. Most taxi services have their own online website where you can book your taxi. Here’s is how it works:</p>
+      <p>1. Book a Taxi: By selecting the pick-up and drop destination along with selecting the type of cab/taxi you wish to travel in. Also, you can make payments if you wish to or else there is an option to make payments after completion of the ride. </p>
+      <p>2. Track the Cab: Once, the booking is done you can track the arrival of your taxi/can on the map with a real time.</p>
+      <p>3. Travel Safe - On the cab arrives, get into the cab and you may enjoy comfortable ride until you reach the selected destination. You need not worry about your security and reliability. For, most of the drivers are extensively trained to ensure your comfort and safety. Further, in case of any emergency situations you can contact their 24/7 customer care and immediately aid will be provided.</p>
+      <p>4. Payment- You can either pay online through various payment channels or make a cash payment. In return, you will receive your e-bill on your registered number or email ID. </p>
+      <p><b>Taxi Fare</b></p>
+      <p>In <area> Ranchi taxi services charges vary depending on various options such as the car type (Ac, non-Ac), number of seats, type of car (hatchback, sedan, SUV, luxury, etc.), travel duration, type of travel (local/outstation), distance, fuel type (diesel, petrol, or CNG), etc. Considering all the mentioned factors here are approximate starting taxi fare/ car rental charges for different trips:</p>
+      <p>
+      </p><table border="1">
+      <tbody>
+      <tr>
+      <td>
+      <p><strong>Taxi Services</strong></p>
+      </td>
+      <td>
+      <p><strong>Taxi Fare</strong></p>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p>Local Taxi</p>
+      </td>
+      <td>
+      <p>Rs. 6 per km onwards</p>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p>Outstation Travel</p>
+      </td>
+      <td>
+      <p>Rs. 8 per km onwards</p>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p>Airport Travel</p>
+      </td>
+      <td>
+      <p>Rs. 7 per km onwards</p>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p>Taxi Tours</p>
+      </td>
+      <td>
+      <p>Rs. 600 onwards</p>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p>Hire Taxi Services for Half Day</p>
+      </td>
+      <td>
+      <p>Rs. 850 onwards</p>
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <p>Hire Taxi Services for Full Day</p>
+      </td>
+      <td>
+      <p>Rs. 1100 onwards</p>
+      </td>
+      </tr>
+      </tbody>
+      </table>
+      <hr class="section-heading-spacer">
+      <div class="clearfix"></div>
+            <h3 class="head">Best Taxi Service In Ranchi (Jharkhand)</h3>
+            <p class="my-3 head">"Ranchi Taxi" is the best Car Rental in Ranchi , Airport Taxi Pick Up &amp; Drop.</p>
+            <p class="head"><h4>Important Routes:</h4></p>
+            {% for i in list %}
+            <p class="my-3 head">"Taxi from {{i.source}} To {{i.destination}}. FARE- RS/{{i.price}}"</p>  
+             {% endfor %}
+          </div>
+        </div>
+      </div>
+      </section>
+
+
+
+  <section class="end">
+    <div class="col-lg-6">
+      <h4>Contact Information</h4>
+      <p><b>Address:</b><br>No. 756 , Airport Road , In Campus of Birsa Munda Airport, Ranchi, India - 834002</p>
+      <p><b>Phone:</b><a href="tel:9876541243"> 9876541243</a></p>
+    </div>
+    <div class="col-lg-3">
+      <h4>Company</h4>
+      <p><a class="nav-link" href="/index.html">Home</a>
+      <a class="nav-link" href="/thrd">Taxi Fare</a>
+      <a class="nav-link" href="services">Services</a>
+      <a class="nav-link" href="/about">About us</a></p>
+    </div>
+    <div class="col-lg-3">
+      <h4>Top Cab Routes</h4>
+      <p><a href="#">Taxi from Ranchi To Jamshedpur</a></p>
+      <p><a href="#">Taxi from Ranchi To Bokaro</a></p> 
+      <p><a href="#">Taxi from Ranchi To Dhanbad</a></p>
+    </div>
+  </section>
+
+  <script src="javascript.js"></script>
+</body>
+</html>

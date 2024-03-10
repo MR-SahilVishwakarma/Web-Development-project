@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    padding: 0px 50px;
+}
+.nav-item{
+    padding: 0px 8px;
+}
+.right-nav{
+    justify-content: center;
+    align-content: center;
+    /* text-align: right; */
+}
+.navbar h4{
+    padding: 0px 203px;
+}
+.navbar a{
+    color: black;
+}
+.rightnav{
+    display: flex;
+    flex-direction: row;
+    padding-right: 8px 0px;
+    justify-content: right;
+    text-align: right;
+}
+.rightnav button{
+    border: 2px solid black;
+} 
+
+.w3l_header_left{
+    background-color: black;
+}
+/* .box{
+    background-color: white;
+} */
+.w3l_header_left ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.w3l_header_left li{
+    padding: 8px 249px;
+}
+.thrd{
+    display: flex;
+    flex-direction: row;
+}
+/* .col-lg-6{
+    margin: 0px 10px;
+} */
+.thrd button{
+    background-color: rgb(52, 245, 252);
+    padding: 4px 8px;
+    border-radius: 10px;
+}
+.thrd button:hover{
+    background-color: rgb(4, 12, 238);
+    color: white;
+}
+.sec02{
+    display: flex;
+    flex-direction: row;
+}
+.sec03{
+    background-color: orangered;
+    padding: 40px;
+}
+.clearfix tr{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px 10px;
+}
+.end{
+    background-color: rgb(129, 222, 250);
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.col-lg-3 p{
+    margin: 0px;
+    padding: 0px;
+    color: gray;
+}
+.nav-link {
+    display: block;
+    padding: 0rem;
+    color: gray;
+}
+.col-lg-8{
+    width: 66.66666667%;
+}
+.container h3 {
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    padding: 0px 80px;
+}
+.container button{
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    padding: 10px 40px;
+    margin: 10px;
+}
+
+
+/* bill css */
+.col-md-5{
+    padding: 20px;
+}
+.col-md-4{
+    padding: 20px;
+}
+.col-md-3{
+    padding: 20px;
+}
